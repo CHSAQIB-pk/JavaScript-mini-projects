@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        main{
+            height: 100vh;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 3.5vw;
+            word-spacing: 25px;
+            text-transform: uppercase;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        #crsr{
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            mix-blend-mode: difference;
+            transition: all .3s linear;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>cursor move</h1>
+        <div id="crsr"></div>
+    </main>
+
+    <script>
+        let crsr = document.getElementById("crsr")
+        let main = document.getElementsByTagName("main")[0]
+
+        main.addEventListener("mousemove",function(a){
+            crsr.style.left = a.x +"px"
+            crsr.style.top = a.y +"px"
+            
+        })
+    </script>
+</body>
+</html>
